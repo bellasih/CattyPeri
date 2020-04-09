@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <item android:id="@+id/home"
+        android:title="Home"
+        android:checkable="true"/>
+
+    <item android:id="@+id/donation"
+        android:title="Donation"
+
+        android:checkable="true"/>
+
+    <item android:id="@+id/adoption"
+        android:title="Adoption"
+        android:checkable="true"/>
+
+    <item android:id="@+id/news"
+        android:title="News and Article"
+        android:checkable="true"/>
+
+    <item android:id="@+id/regis_cat"
+        android:title="Register for Cat"
+        android:checkable="true"/>
+
+    <item android:id="@+id/login"
+        android:title="Login"
+        android:checkable="true"/>
+
+</menu>

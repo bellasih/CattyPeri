@@ -1,4 +1,4 @@
-package com.example.latihan1;
+package com.example.cattyperi;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("com.example.latihan1", appContext.getPackageName());
+        assertEquals("com.example.cattyperi", appContext.getPackageName());
     }
 }

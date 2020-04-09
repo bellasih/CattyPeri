@@ -1,4 +1,4 @@
-package com.example.latihan1;
+package com.example.cattyperi;
 
 import org.junit.Test;
 
