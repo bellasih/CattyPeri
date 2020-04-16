@@ -3,12 +3,11 @@ package com.example.cattyperi;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -23,48 +22,60 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class AdoptionActivity extends AppCompatActivity {
-    private RecyclerView recyclerView;
-    private ArrayList<ArrayList<String>> cat_data;
-    String url_getAvailableCat = "http://192.168.1.4/FP_TEKBER/getAvailableCat.php";
+public class AdoptionTranscationActivity extends AppCompatActivity {
+    private RelativeLayout rl;
+    private TextView tv, tv1;
+    private ArrayList<String> arr_data;
+
+    String url_getDonationTransaction = "http://192.168.1.4/FP_TEKBER/getAdoptionTransaction.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_adoption);
-
+        setContentView(R.layout.activity_donation_transaction);
+        rl = findViewById(R.id.relative_layout);
         getData();
-        recyclerView = findViewById(R.id.recycler_view);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(AdoptionActivity.this);
-        recyclerView.setLayoutManager(layoutManager);
-        //recyclerView.setAdapter(adapter);
     }
 
     public void getData(){
         RequestQueue queue = Volley.newRequestQueue(this);
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url_getAvailableCat,
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url_getDonationTransaction,
             new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
                     try {
-                        cat_data = new ArrayList<ArrayList<String>>();
-                        ArrayList<String> temp_data = new ArrayList<>();
+                        LinearLayout.LayoutParams p = new LinearLayout.LayoutParams(
+                            LinearLayout.LayoutParams.WRAP_CONTENT,
+                            LinearLayout.LayoutParams.WRAP_CONTENT
+                        );
 
                         JSONArray mJsonArray = new JSONArray(response);
                         if(mJsonArray.length()==0){
-                            temp_data.add("Sorry, there are no cats that available for adoption");
+                            tv = new TextView(AdoptionTranscationActivity.this);
+                            tv.setPadding(10,50,10,0);
+                            tv.setText("Sorry, the data isn't available");
+                            tv.setTextSize(16);
+                            tv.setTextColor(000000);
+                            rl.addView(tv, p);
                         }
                         else{
-                            String index [] = {"id_cat","name_cat","type_cat","photo","date_found"};
+                            String index [] = {"id_donation","id_cat","donator","nominal","date_donation"};
                             for(int i=0;i<mJsonArray.length();i++) {
+                                arr_data = new ArrayList<>();
+                                arr_data.add(String.valueOf(i + 1));
                                 JSONObject mJsonObject = mJsonArray.getJSONObject(i);
 
                                 for (int k = 0; k < index.length; k++) {
-                                    temp_data.add(mJsonObject.getString(index[k]));
+                                    arr_data.add(mJsonObject.getString(index[k]));
                                 }
 
-                                cat_data.add(temp_data);
-                                temp_data.clear();
+                                TableRow tr = new TableRow(AdoptionTranscationActivity.this);
+                                for (int j = 0; j < 6; j++) {
+                                    tv1 = new TextView(AdoptionTranscationActivity.this);
+                                    tv1.setText(arr_data.get(j));
+                                    tr.addView(tv1);
+                                }
+                                rl.addView(tr, p);
                             }
                         }
                     } catch (JSONException e) {
