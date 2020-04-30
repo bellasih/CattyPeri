@@ -27,7 +27,7 @@ public class DonationTransactionActivity extends AppCompatActivity {
     private TextView tv, tv1;
     private ArrayList<String> arr_data;
 
-    String url_getDonationTransaction = "http://skm.diskominfotik.blitarkota.go.id/apk/android/storeJawab.php";
+    String url_getDonationTransaction = "http://192.168.1.4/FP_TEKBER/getDonationTransaction.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

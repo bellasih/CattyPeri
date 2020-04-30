@@ -37,6 +37,21 @@ public class AdoptionTranscationActivity extends AppCompatActivity {
         getData();
     }
 
+    public void storeData()
+    {
+
+    }
+
+    public void editData()
+    {
+
+    }
+
+    public void deleteData()
+    {
+
+    }
+
     public void getData(){
         RequestQueue queue = Volley.newRequestQueue(this);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url_getDonationTransaction,

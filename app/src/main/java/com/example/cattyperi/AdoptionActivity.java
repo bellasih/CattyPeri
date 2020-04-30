@@ -26,22 +26,37 @@ import java.util.ArrayList;
 public class AdoptionActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private ArrayList<ArrayList<String>> cat_data;
-    String url_getAvailableCat = "http://192.168.1.4/FP_TEKBER/getAvailableCat.php";
+    int role;
+    String temp;
+    String url_getAvailableCat      = "http://192.168.1.4/FP_TEKBER/getAvailableCat.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_adoption);
+        int button_id = 1;
+        /*get button on click method*/
 
-        getData();
-        recyclerView = findViewById(R.id.recycler_view);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(AdoptionActivity.this);
-        recyclerView.setLayoutManager(layoutManager);
-        //recyclerView.setAdapter(adapter);
+        if(button_id == 1) {
+            setContentView(R.layout.activity_adoption);
+            getData(0);
+
+            recyclerView = findViewById(R.id.recycler_view);
+            RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(AdoptionActivity.this);
+            recyclerView.setLayoutManager(layoutManager);
+            //recyclerView.setAdapter(adapter);
+
+        }
+        else{
+            setContentView(R.layout.activity_adoption_detail);
+            getData(1);
+        }
     }
 
-    public void getData(){
+    public void getData(int id_cat){
         RequestQueue queue = Volley.newRequestQueue(this);
+        if(id_cat != 0){
+            url_getAvailableCat = url_getAvailableCat + "?id_cat=" + id_cat;
+        }
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url_getAvailableCat,
             new Response.Listener<String>() {
                 @Override
