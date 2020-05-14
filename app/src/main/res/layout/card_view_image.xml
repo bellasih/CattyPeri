@@ -13,20 +13,28 @@
         android:layout_margin="5dp"
         android:orientation="vertical"
         android:padding="5dp">
+        <ImageView
+            android:id="@+id/txt_img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
         <TextView
-            android:id="@+id/txt_title"
+            android:id="@+id/txt_title_img"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <TextView
-            android:id="@+id/txt_body1"
+            android:id="@+id/txt_body1_img"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <TextView
-            android:id="@+id/txt_body2"
+            android:id="@+id/txt_body2_img"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <Button
-            android:id="@+id/txt_btn"
+            android:id="@+id/txt_btn_img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/txt_btn2_img"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>
