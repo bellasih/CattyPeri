@@ -60,7 +60,6 @@ public class DetailAdoptionActivity extends AppCompatActivity {
 
     public void getData(final VolleyCallbackAdapter callback){
         RequestQueue queue = Volley.newRequestQueue(this);
-        Toast.makeText(DetailAdoptionActivity.this, id_cat, Toast.LENGTH_LONG).show();
         String url      = "http://192.168.1.5/FP_TEKBER/getAvailableCat.php?id_cat="+id_cat;
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
             new Response.Listener<String>() {
