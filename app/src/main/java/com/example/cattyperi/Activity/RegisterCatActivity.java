@@ -27,10 +27,10 @@ public class RegisterCatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_cat);
 
-        ed_name_cat     = findViewById(R.id.ed1);
-        ed_condition    = findViewById(R.id.ed2);
-        ed_location     = findViewById(R.id.ed3);
-        ed_disease      = findViewById(R.id.ed4);
+        ed_name_cat      = findViewById(R.id.ed1);
+        ed_location      = findViewById(R.id.ed2);
+        ed_condition     = findViewById(R.id.ed3);
+        ed_disease       = findViewById(R.id.ed4);
 
         username = getIntent().getStringExtra("user");
 
@@ -55,7 +55,11 @@ public class RegisterCatActivity extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-
+                Toast.makeText(RegisterCatActivity.this, "Successfull to register",Toast.LENGTH_LONG).show();
+                ed_condition.setText("");
+                ed_location.setText("");
+                ed_disease.setText("");
+                ed_location.setText("");
             }
         },
             new Response.ErrorListener() {

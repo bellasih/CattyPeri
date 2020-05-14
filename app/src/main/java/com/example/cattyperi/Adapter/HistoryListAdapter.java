@@ -45,29 +45,30 @@ public class HistoryListAdapter extends RecyclerView.Adapter<HistoryListAdapter.
         holder.txtBody2.setText(dataList.get(position).getDate());
         holder.btn.setText("Hide");
         holder.btn.setOnClickListener(new View.OnClickListener() {
-              @Override
-              public void onClick(View v) {
-                  RequestQueue queue = Volley.newRequestQueue(v.getContext());
-                  String url      = "http://192.168.1.5/FP_TEKBER/getHistory.php?id_notif="+dataList.get(position).getIdHistory()+"&user="+dataList.get(position).getUser();
+            @Override
+            public void onClick(View v) {
+                RequestQueue queue = Volley.newRequestQueue(v.getContext());
+                String url      = "http://192.168.1.5/FP_TEKBER/getHistory.php?id_notif="+dataList.get(position).getIdHistory()+"&user="+dataList.get(position).getUser();
 
-                  StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-                      new Response.Listener<String>() {
-                          @Override
-                          public void onResponse(String response) {
+                StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
 
-                          }
-                      },
-                      new Response.ErrorListener() {
-                          @Override
-                          public void onErrorResponse(VolleyError error) {
-                              Log.d("Error Response",error.toString());
-                          }
-                      }
-                  );
-                  queue.add(stringRequest);
+                        }
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            Log.d("Error Response",error.toString());
+                        }
+                    }
+                );
+                queue.add(stringRequest);
 
-                  dataList.remove(dataList.get(position));
-                  notifyDataSetChanged();
+                dataList.remove(dataList.get(position));
+                notifyDataSetChanged();
+                Toast.makeText(v.getContext(), "Notifikasi berhasil disembunyikan", Toast.LENGTH_LONG).show();
               }
         });
     }

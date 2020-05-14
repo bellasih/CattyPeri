@@ -5,7 +5,7 @@
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    android:layout_marginTop="50dp"
+    android:background="@color/colorHeader"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -29,6 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="90dp"
         android:layout_marginLeft="90dp"
+        android:layout_marginTop="137dp"
         android:text="Register Account"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -40,7 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="5dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="170dp"
         android:layout_marginRight="25dp"
         android:layout_marginBottom="90dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -84,7 +85,7 @@
                     android:layout_marginStart="70dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="8dp"
-                    android:text="Jenis Kelamin"
+                    android:text="Gender"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
@@ -107,7 +108,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="0dp"
                         android:layout_marginLeft="0dp"
-                        android:text="Laki-Laki" />
+                        android:text="Male" />
 
                     <RadioButton
                         android:id="@+id/rbtn2"
@@ -115,7 +116,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="17dp"
                         android:layout_marginLeft="0dp"
-                        android:text="Perempuan" />
+                        android:text="Female" />
                 </RadioGroup>
 
                 <TextView
@@ -125,7 +126,7 @@
                     android:layout_marginStart="70dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="8dp"
-                    android:text="Alamat"
+                    android:text="Address"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
@@ -172,7 +173,7 @@
                     android:layout_marginStart="70dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="8dp"
-                    android:text="No HP"
+                    android:text="Phone Number"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"

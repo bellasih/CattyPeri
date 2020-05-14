@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 for(int i =0;i<result.length();i++){
                     try {
                         JSONObject obj = result.getJSONObject(i);
-                        mAdoptionAdapter.addCardItem(new Adoption(obj.getString("id_cat"), obj.getString("name_cat"),obj.getString("loc_found"),obj.getString("photo")));
+                        mAdoptionAdapter.addCardItem(new Adoption(obj.getString("id_cat"), obj.getString("name_cat"),obj.getString("loc_found"),obj.getString("photo")),username);
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }

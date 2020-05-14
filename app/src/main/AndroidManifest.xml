@@ -83,18 +83,6 @@
         </activity>
 
         <!--admin-->
-        <activity android:name=".Activity.AdoptionTranscationActivity"
-            android:windowSoftInputMode="stateHidden|adjustPan"
-            android:configChanges="orientation"
-            android:screenOrientation="portrait">
-
-        </activity>
-        <activity android:name=".Activity.DonationTransactionActivity"
-            android:windowSoftInputMode="stateHidden|adjustPan"
-            android:configChanges="orientation"
-            android:screenOrientation="portrait">
-
-        </activity>
         <activity android:name=".Activity.Details.DetailNewsActivity"
             android:windowSoftInputMode="stateHidden|adjustPan"
             android:configChanges="orientation"

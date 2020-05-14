@@ -35,7 +35,6 @@ public class DetailNewsActivity extends AppCompatActivity {
         content = findViewById(R.id.tv_content);
 
         id_news = getIntent().getStringExtra("id_news");
-        Toast.makeText(DetailNewsActivity.this, id_news, Toast.LENGTH_LONG).show();
         onResume();
     }
 
@@ -44,11 +43,9 @@ public class DetailNewsActivity extends AppCompatActivity {
         getData(new VolleyCallbackAdapter(){
             @Override
             public void onSuccessResponse(JSONArray result) throws JSONException {
-                Toast.makeText(DetailNewsActivity.this, result.toString(), Toast.LENGTH_LONG).show();
-
                 JSONObject obj = result.getJSONObject(0);
-                title.setText(obj.getString("title_news"));
-                date.setText(obj.getString("date"));
+                title.setText("Title of news : " + obj.getString("title_news"));
+                date.setText("Date publish : "+obj.getString("date"));
                 content.setText(obj.getString("content_news"));
             }
         });

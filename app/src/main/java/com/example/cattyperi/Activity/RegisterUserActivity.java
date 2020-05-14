@@ -31,14 +31,12 @@ public class RegisterUserActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_acc);
 
-        getSupportActionBar();
-
-        username = findViewById(R.id.editText);
+        username = findViewById(R.id.editText6);
         password = findViewById(R.id.editText4);
         email    = findViewById(R.id.editText3);
         address  = findViewById(R.id.editText2);
         hp       = findViewById(R.id.editText5);
-        name     = findViewById(R.id.editText6);
+        name     = findViewById(R.id.editText);
 
         btn = findViewById(R.id.button2);
         btn.setOnClickListener(new View.OnClickListener() {
@@ -73,6 +71,12 @@ public class RegisterUserActivity extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 Toast.makeText(RegisterUserActivity.this, "Successfull for register", Toast.LENGTH_LONG).show();
+                username.setText("");
+                password.setText("");
+                email.setText("");
+                address.setText("");
+                hp.setText("");
+                name.setText("");
             }
         },
             new Response.ErrorListener() {

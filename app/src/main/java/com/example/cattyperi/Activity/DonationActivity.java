@@ -32,7 +32,7 @@ public class DonationActivity extends AppCompatActivity {
         ed_nominal      = findViewById(R.id.edd1);
         username        = getIntent().getStringExtra("user");
 
-        Button send = findViewById(R.id.submitbtn);
+        Button send = findViewById(R.id.submitsbtn);
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,7 +49,7 @@ public class DonationActivity extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Toast.makeText(DonationActivity.this, "Successfull for register", Toast.LENGTH_LONG).show();
+                Toast.makeText(DonationActivity.this, "Successfull for donation :)", Toast.LENGTH_LONG).show();
             }
         },
             new Response.ErrorListener() {

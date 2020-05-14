@@ -49,13 +49,13 @@ public class DetailAdoptionActivity extends AppCompatActivity {
             public void onSuccessResponse(JSONArray result) throws JSONException {
                 Toast.makeText(DetailAdoptionActivity.this, result.toString(), Toast.LENGTH_LONG).show();
 
-                JSONObject obj = result.getJSONObject(0);
-                name_cat.setText(obj.getString("name_cat"));
-                type_cat.setText(obj.getString("type_cat"));
-                condition_cat.setText(obj.getString("condition_cat"));
-                loc_found.setText(obj.getString("loc_found"));
-                age.setText(obj.getString("age"));
                 img_cat.setImageResource(R.drawable.logo);
+                JSONObject obj = result.getJSONObject(0);
+                name_cat.setText("Cat's name : " + obj.getString("name_cat"));
+                type_cat.setText("The type of cat : " + obj.getString("type_cat"));
+                condition_cat.setText("Condition of cat : " + obj.getString("condition_cat"));
+                loc_found.setText("Location found : " + obj.getString("loc_found"));
+                age.setText(obj.getString("Age of cat : " + "age"));
             }
         });
     }

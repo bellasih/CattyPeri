@@ -25,10 +25,10 @@
         android:id="@+id/tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginLeft="120dp"
-        android:text="Register Kucing"
-        android:textSize="24sp"
+        android:layout_marginStart="115dp"
+        android:layout_marginLeft="115dp"
+        android:text="Register for cat"
+        android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -40,7 +40,8 @@
         android:layout_marginStart="49dp"
         android:layout_marginLeft="49dp"
         android:layout_marginTop="16dp"
-        android:text="Nama Kucing"
+        android:textSize="18dp"
+        android:text="Cat's Name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv" />
 
@@ -51,16 +52,18 @@
         android:layout_marginStart="49dp"
         android:layout_marginLeft="49dp"
         android:layout_marginTop="8dp"
-        android:text="Lokasi Ditemukan"
+        android:textSize="18dp"
+        android:text="Location Found"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ed1" />
 
     <EditText
         android:id="@+id/ed2"
         android:layout_width="177dp"
-        android:layout_height="34dp"
+        android:layout_height="40dp"
         android:layout_marginStart="49dp"
         android:layout_marginLeft="49dp"
+        android:textSize="18dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv2" />
 
@@ -71,16 +74,18 @@
         android:layout_marginStart="49dp"
         android:layout_marginLeft="49dp"
         android:layout_marginTop="8dp"
-        android:text="Kondisi Kucing"
+        android:textSize="18dp"
+        android:text="Cat's Condition"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ed2" />
 
     <EditText
         android:id="@+id/ed3"
         android:layout_width="177dp"
-        android:layout_height="34dp"
+        android:layout_height="40dp"
         android:layout_marginStart="49dp"
         android:layout_marginLeft="49dp"
+        android:textSize="18dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv3" />
 
@@ -91,24 +96,27 @@
         android:layout_marginStart="49dp"
         android:layout_marginLeft="49dp"
         android:layout_marginTop="8dp"
-        android:text="Penyakit"
+        android:textSize="18dp"
+        android:text="Disease"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ed3" />
 
     <EditText
         android:id="@+id/ed4"
         android:layout_width="177dp"
-        android:layout_height="34dp"
+        android:layout_height="40dp"
         android:layout_marginStart="49dp"
         android:layout_marginLeft="49dp"
+        android:textSize="18dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv4" />
 
     <EditText
         android:id="@+id/ed1"
         android:layout_width="177dp"
-        android:layout_height="34dp"
+        android:layout_height="40dp"
         android:layout_marginStart="49dp"
+        android:textSize="18dp"
         android:layout_marginLeft="49dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv1" />
@@ -117,9 +125,11 @@
         android:id="@+id/sendbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="125dp"
+        android:layout_marginLeft="125dp"
         android:text="Submit"
-        app:layout_constraintTop_toBottomOf="@+id/ed4"
-        tools:layout_editor_absoluteX="157dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ed4" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

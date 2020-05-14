@@ -44,7 +44,6 @@ public class LoginActivity extends  AppCompatActivity{
             public void onClick(View v) {
                 username = ed_username.getText().toString();
                 password = ed_password.getText().toString();
-                Toast.makeText(LoginActivity.this, username + " " + password, Toast.LENGTH_LONG).show();
 
                 params = username;
                 onResume(username,password);
@@ -90,7 +89,6 @@ public class LoginActivity extends  AppCompatActivity{
                 public void onResponse(String response) {
                     try {
                         JSONArray mJsonArray = new JSONArray(response);
-                        Toast.makeText(LoginActivity.this, mJsonArray.toString(), Toast.LENGTH_LONG).show();
                         callback.onSuccessResponse(mJsonArray);
                     } catch (JSONException e) {
                         e.printStackTrace();

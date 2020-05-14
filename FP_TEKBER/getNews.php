@@ -1,7 +1,14 @@
 <?php 
 	require_once('connection.php');
 
-	$sql = "SELECT * FROM `news_article`";
+	$sql = "";
+	if(isset($_GET['id_news'])){
+		$id_news = $_GET['id_news'];
+		$sql = "SELECT * FROM `news_article` WHERE `id_news` = '$id_news'";
+	}
+	else{
+		$sql = "SELECT * FROM `news_article`";
+	}
 	
 	$result = array();
 	$r = mysqli_query($database, $sql);

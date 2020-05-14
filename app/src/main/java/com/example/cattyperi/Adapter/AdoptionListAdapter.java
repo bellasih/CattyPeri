@@ -46,9 +46,9 @@ public class AdoptionListAdapter extends RecyclerView.Adapter<AdoptionListAdapte
     public void onBindViewHolder(AdoptionListAdapter.AdoptionListViewHolder holder, final int position) {
         //int res = Context.getResources().getIdentifier(dataList.get(position).getNameCat(), "drawable", Context.getPackageName());
         holder.txtImg.setImageResource(R.drawable.logo);
-        holder.txtTitle.setText(dataList.get(position).getNameCat());
-        holder.txtBody1.setText(dataList.get(position).getIdCat());
-        holder.txtBody2.setText(dataList.get(position).getLocFound());
+        holder.txtTitle.setText("Cat's name : " + dataList.get(position).getNameCat());
+        holder.txtBody1.setText("");
+        holder.txtBody2.setText("Location found : " + dataList.get(position).getLocFound());
         holder.btn.setText("See Detail");
         holder.btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,7 +83,7 @@ public class AdoptionListAdapter extends RecyclerView.Adapter<AdoptionListAdapte
 
                 dataList.remove(dataList.get(position));
                 notifyDataSetChanged();
-                Toast.makeText(v.getContext(), "Kucing yang dipilih berhasil diadopsi", Toast.LENGTH_LONG).show();
+                Toast.makeText(v.getContext(), "Cat is adopted successfully", Toast.LENGTH_LONG).show();
             }
         });
     }
