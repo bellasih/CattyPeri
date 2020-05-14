@@ -51,12 +51,7 @@ public class RegisterUserActivity extends AppCompatActivity {
                 jk_group        = findViewById(R.id.jks);
                 jk_btn          = findViewById(jk_group.getCheckedRadioButtonId());
                 jk_txt          = jk_btn.getText().toString();
-                if(jk_txt.equals("Perempuan")){
-                    jk_txt = "Female";
-                }
-                else{
-                    jk_txt = "Male";
-                }
+
                 storeUser();
             }
         });
@@ -65,7 +60,6 @@ public class RegisterUserActivity extends AppCompatActivity {
     public void storeUser(){
         String url_storeDonation = "http://192.168.1.5/FP_TEKBER/storeUser.php?";
         String url = url_storeDonation + "user=" + username_txt + "&password=" + password_txt + "&email=" + email_txt + "&hp=" + hp_txt + "&address=" + address_txt + "&jk=" + jk_txt + "&name=" + name_txt;
-        Toast.makeText(RegisterUserActivity.this, url, Toast.LENGTH_LONG).show();
         Log.e("URL", url);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override

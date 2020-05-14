@@ -47,8 +47,6 @@ public class DetailAdoptionActivity extends AppCompatActivity {
         getData(new VolleyCallbackAdapter(){
             @Override
             public void onSuccessResponse(JSONArray result) throws JSONException {
-                Toast.makeText(DetailAdoptionActivity.this, result.toString(), Toast.LENGTH_LONG).show();
-
                 img_cat.setImageResource(R.drawable.logo);
                 JSONObject obj = result.getJSONObject(0);
                 name_cat.setText("Cat's name : " + obj.getString("name_cat"));

@@ -60,6 +60,7 @@ public class RegisterCatActivity extends AppCompatActivity {
                 ed_location.setText("");
                 ed_disease.setText("");
                 ed_location.setText("");
+                ed_name_cat.setText("");
             }
         },
             new Response.ErrorListener() {

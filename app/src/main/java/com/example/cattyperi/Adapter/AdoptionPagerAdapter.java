@@ -94,7 +94,6 @@ public class AdoptionPagerAdapter extends PagerAdapter implements PageAdapter {
             public void onClick(View v) {
                 RequestQueue queue = Volley.newRequestQueue(v.getContext());
                 String url      = "http://192.168.1.5/FP_TEKBER/getAvailableCat.php?id_cat="+coba+"&user="+user;
-                Toast.makeText(v.getContext(),url + " " + position,Toast.LENGTH_LONG).show();
 
                 StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                     new Response.Listener<String>() {
