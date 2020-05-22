@@ -9,7 +9,6 @@ import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
-import com.example.cattyperi.Adapter.NewsListAdapter;
 import com.example.cattyperi.Adapter.PageAdapter;
 import com.example.cattyperi.R;
 
