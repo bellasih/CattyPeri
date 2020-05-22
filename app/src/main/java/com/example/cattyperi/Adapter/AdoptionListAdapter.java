@@ -16,8 +16,6 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.ImageLoader;
-import com.android.volley.toolbox.NetworkImageView;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.cattyperi.Activity.Details.DetailAdoptionActivity;
@@ -31,8 +29,6 @@ import java.util.ArrayList;
 public class AdoptionListAdapter extends RecyclerView.Adapter<AdoptionListAdapter.AdoptionListViewHolder> {
     private ArrayList<Adoption> dataList;
     String username;
-    ImageLoader imgLoader;
-//    NetworkImageView previewImage;
 
     public AdoptionListAdapter(ArrayList<Adoption> dataList, String username) {
         this.dataList = dataList;
@@ -43,21 +39,13 @@ public class AdoptionListAdapter extends RecyclerView.Adapter<AdoptionListAdapte
     public AdoptionListAdapter.AdoptionListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View view = layoutInflater.inflate(R.layout.card_view_image, parent, false);
-
         return new AdoptionListAdapter.AdoptionListViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(AdoptionListViewHolder holder, final int position) {
+    public void onBindViewHolder(AdoptionListAdapter.AdoptionListViewHolder holder, final int position) {
         //int res = Context.getResources().getIdentifier(dataList.get(position).getNameCat(), "drawable", Context.getPackageName());
-        String photo_name = dataList.get(position).getImgCat();
-        String url_img = "httl://192.168.1.5/FP_TEKBER/" + photo_name;
-//        previewImage = (NetworkImageView)rootView.findViewById(R.id.previewImage);
-
-        imgLoader.get(url_img, ImageLoader.getImageListener(holder.txtImg
-            ,0,android.R.drawable
-                .ic_dialog_alert));
-        holder.txtImgUrl.setImageUrl(url_img,imgLoader);
+        holder.txtImg.setImageResource(R.drawable.logo);
         holder.txtTitle.setText("Cat's name : " + dataList.get(position).getNameCat());
         holder.txtBody1.setText("");
         holder.txtBody2.setText("Location found : " + dataList.get(position).getLocFound());
@@ -105,15 +93,15 @@ public class AdoptionListAdapter extends RecyclerView.Adapter<AdoptionListAdapte
         return (dataList != null) ? dataList.size() : 0;
     }
 
+
     public class AdoptionListViewHolder extends RecyclerView.ViewHolder{
         private TextView txtTitle, txtBody1, txtBody2;
         private ImageView txtImg;
-        private NetworkImageView txtImgUrl;
         private Button btn, btn2;
 
         public AdoptionListViewHolder(View itemView) {
             super(itemView);
-            txtImgUrl = itemView.findViewById(R.id.previewImage);
+            txtImg   = itemView.findViewById(R.id.txt_img);
             txtTitle =  itemView.findViewById(R.id.txt_title_img);
             txtBody1 =  itemView.findViewById(R.id.txt_body1_img);
             txtBody2 =  itemView.findViewById(R.id.txt_body2_img);
